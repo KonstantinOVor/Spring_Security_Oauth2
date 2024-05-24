@@ -1,0 +1,30 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: Iv23lidWtteLhZ2a9Une
+            client-secret: 809f78f1db348e0b546df6b3ee86f5797f118ace
+            scope: email
+          google:
+            client-id: 70860241418-q94qbt2q2l7d72949od2uc3illv72thm.apps.googleusercontent.com
+            client-secret: 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
+            redirect-uri: http://localhost:8080/login/oauth2/code/google
+
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      schema: app_security_oauth
+      connection-init-sql: CREATE SCHEMA IF NOT EXISTS app_security_oauth
+      connection-timeout: 10000
